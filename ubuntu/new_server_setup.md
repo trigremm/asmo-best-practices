@@ -64,6 +64,8 @@ sudo mount /dev/nvme1n1 /mnt/data
 # persist by UUID (nofail so a missing volume never blocks boot)
 sudo blkid /dev/nvme1n1
 echo 'UUID=<paste-uuid> /mnt/data ext4 defaults,nofail 0 2' | sudo tee -a /etc/fstab
+# echo 'UUID="6d83dc36-6ba7-4834-973e-73513f0654e3" /mnt/data ext4 defaults,nofail 0 2' | sudo tee -a /etc/fstab
+
 
 # test fstab before trusting reboot
 sudo umount /mnt/data && sudo mount -a && df -h /mnt/data
@@ -90,9 +92,8 @@ echo "ssh-ed25519 AAAA...migrate-new-to-old" >> ~/.ssh/authorized_keys
 chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
 OLD_PRIVATE_IP=10.x.x.x                       # run `hostname -I` on the old box
-OLD_PRIVATE_IP=172.31.44.112                      # run `hostname -I` on the old box
 KEY=~/.ssh/migrate_ed25519
-REPO=/workspace/www-alphaedu-tech
+REPO=/workspace/
 
 # dry-run first
 
