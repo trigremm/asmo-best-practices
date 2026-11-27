@@ -8,14 +8,14 @@ hostnamectl set-hostname <new-hostname>
 
 ### general setup
 ```shell
-apt update
-apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 
-apt install -y htop vim tree
-apt install -y wget curl rsync
-apt install -y git make
-apt install -y nginx
-apt install -y certbot python3-certbot-nginx
+sudo apt install -y htop vim tree
+sudo apt install -y wget curl rsync
+sudo apt install -y git make
+sudo apt install -y nginx
+sudo apt install -y certbot python3-certbot-nginx
 
 ```
 
